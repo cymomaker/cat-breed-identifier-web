@@ -1,0 +1,15 @@
+# robots.txt for catbreedai.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://catbreedai.com/sitemap.xml
+
+# Disallow certain paths if needed (currently allowing all)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Crawl-delay (optional, adjust based on server capacity)
+Crawl-delay: 1
+

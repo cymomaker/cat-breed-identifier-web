@@ -1,0 +1,33 @@
+{
+  "name": "cat-breed-identifier-web",
+  "version": "1.0.0",
+  "description": "AI-powered cat breed identification web application",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8000 -c-1",
+    "dev": "npx http-server -p 8000 -c-1 -o",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": [
+    "cat",
+    "breed",
+    "identification",
+    "ai",
+    "machine-learning",
+    "deep-learning",
+    "computer-vision"
+  ],
+  "author": "Cat Breed AI",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/cat-breed-identifier-web.git"
+  },
+  "homepage": "https://catbreedai.com",
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
+
