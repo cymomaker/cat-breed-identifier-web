@@ -1,18 +1,4 @@
 {
-  "version": 2,
-  "name": "cat-breed-identifier",
-  "builds": [
-    {
-      "src": "**/*",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
   "headers": [
     {
       "source": "/models/(.*)",
@@ -43,4 +29,3 @@
     }
   ]
 }
-
