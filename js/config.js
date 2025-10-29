@@ -53,9 +53,7 @@ export const SOCIAL_PROOF = {
     // 总用户数
     TOTAL_USERS: '12,846+',
     // 产品评分
-    AVERAGE_RATING: '4.8/5',
-    // 等待列表人数
-    WAITLIST_COUNT: '2,847+'
+    AVERAGE_RATING: '4.8/5'
 };
 
 // ============================================================================
@@ -71,15 +69,6 @@ export const SHARE_CONFIG = {
     SHARE_CARD_HEIGHT: 600
 };
 
-// ============================================================================
-// 发布配置
-// ============================================================================
-export const LAUNCH_CONFIG = {
-    // 预期发布时间
-    EXPECTED_LAUNCH: 'Q1 2025',
-    // 产品状态
-    PRODUCT_STATUS: 'coming_soon'  // 'available' | 'coming_soon'
-};
 
 // ============================================================================
 // 错误消息
@@ -98,8 +87,7 @@ export const ERROR_MESSAGES = {
 export const SUCCESS_MESSAGES = {
     REPORT_DOWNLOADED: '报告已下载成功！请检查您的下载文件夹',
     CARD_DOWNLOADED: '分享卡片已下载！现在可以分享到社交媒体了',
-    LINK_COPIED: '链接已复制到剪贴板！',
-    WAITLIST_JOINED: '您已加入等待列表。我们会在发布时通知您！'
+    LINK_COPIED: '链接已复制到剪贴板！'
 };
 
 // ============================================================================
@@ -141,7 +129,6 @@ export default {
     BREEDS_CONFIG,
     SOCIAL_PROOF,
     SHARE_CONFIG,
-    LAUNCH_CONFIG,
     ERROR_MESSAGES,
     SUCCESS_MESSAGES,
     POPULAR_BREEDS,

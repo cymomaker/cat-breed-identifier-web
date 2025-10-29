@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 // Script to generate individual HTML pages for all 67 cat breeds
-// Each page will be a copy of the breed-detail.html template
+// Each page will be a copy of the breed-detail.html template with optimized SEO
 
 const fs = require('fs');
 const path = require('path');
@@ -34,6 +34,31 @@ function getBreedSlug(breedName) {
         .replace(/[^a-z0-9-]/g, '');
 }
 
+// Function to generate SEO-optimized meta description (140-160 chars)
+function generateMetaDescription(breedName) {
+    return `Learn about ${breedName} cats: personality, characteristics, care requirements, history, and health. Complete guide with photos and expert advice.`;
+}
+
+// Function to generate SEO-optimized keywords (max 100 chars)
+function generateKeywords(breedName) {
+    // Strategy: Always stay under 100 chars by being selective
+    const baseKeywords = `${breedName} cat,${breedName} breed`;
+    
+    if (baseKeywords.length > 70) {
+        // Very long breed name (70+ base) - just add generic term
+        return `${baseKeywords},cat breeds`;
+    } else if (baseKeywords.length > 55) {
+        // Long breed name (55-70 base) - add one keyword
+        return `${baseKeywords},${breedName} care,cat breeds`;
+    } else if (baseKeywords.length > 40) {
+        // Medium breed name (40-55 base) - add two keywords
+        return `${baseKeywords},${breedName} traits,cat breeds`;
+    } else {
+        // Short breed name (<40 base) - add more keywords
+        return `${baseKeywords},${breedName} traits,${breedName} care,cat breeds`;
+    }
+}
+
 // Read the template file
 const templatePath = path.join(__dirname, 'breeds', 'breed-detail.html');
 const template = fs.readFileSync(templatePath, 'utf8');
@@ -55,9 +80,63 @@ breeds.forEach((breed) => {
         const slug = getBreedSlug(breed);
         const filename = `${slug}.html`;
         const filepath = path.join(breedsDir, filename);
+        const breedUrl = `https://catbreedai.com/breeds/${slug}.html`;
         
-        // Write the template to the new file
-        fs.writeFileSync(filepath, template, 'utf8');
+        // Generate SEO-optimized content
+        const title = `${breed} Cat Breed - Complete Guide & Info | CatBreedAI`;
+        const description = generateMetaDescription(breed);
+        const keywords = generateKeywords(breed);
+        const ogTitle = `${breed} Cat - Complete Breed Guide`;
+        const twitterTitle = `${breed} Cat Breed Guide`;
+        
+        // Replace SEO meta tags in the template
+        let pageContent = template
+            // Basic meta tags
+            .replace(
+                /<title id="pageTitle">.*?<\/title>/,
+                `<title id="pageTitle">${title}</title>`
+            )
+            .replace(
+                /<meta name="description" id="pageDesc" content=".*?">/,
+                `<meta name="description" id="pageDesc" content="${description}">`
+            )
+            .replace(
+                /<meta name="keywords" id="pageKeywords" content=".*?">/,
+                `<meta name="keywords" id="pageKeywords" content="${keywords}">`
+            )
+            .replace(
+                /<link rel="canonical" id="canonicalUrl" href=".*?">/,
+                `<link rel="canonical" id="canonicalUrl" href="${breedUrl}">`
+            )
+            // Open Graph tags
+            .replace(
+                /<meta property="og:url" id="ogUrl" content=".*?">/,
+                `<meta property="og:url" id="ogUrl" content="${breedUrl}">`
+            )
+            .replace(
+                /<meta property="og:title" id="ogTitle" content=".*?">/,
+                `<meta property="og:title" id="ogTitle" content="${ogTitle}">`
+            )
+            .replace(
+                /<meta property="og:description" id="ogDesc" content=".*?">/,
+                `<meta property="og:description" id="ogDesc" content="${description}">`
+            )
+            // Twitter Card tags
+            .replace(
+                /<meta name="twitter:url" id="twitterUrl" content=".*?">/,
+                `<meta name="twitter:url" id="twitterUrl" content="${breedUrl}">`
+            )
+            .replace(
+                /<meta name="twitter:title" id="twitterTitle" content=".*?">/,
+                `<meta name="twitter:title" id="twitterTitle" content="${twitterTitle}">`
+            )
+            .replace(
+                /<meta name="twitter:description" id="twitterDesc" content=".*?">/,
+                `<meta name="twitter:description" id="twitterDesc" content="${description}">`
+            );
+        
+        // Write the customized content to the new file
+        fs.writeFileSync(filepath, pageContent, 'utf8');
         
         successCount++;
         console.log(`✓ Created: ${filename}`);

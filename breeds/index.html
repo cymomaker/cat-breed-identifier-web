@@ -5,10 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <title>Complete Guide to 67 Cat Breeds | Cat Breed AI</title>
-    <meta name="description" content="Complete guide to 67 cat breeds with detailed information on characteristics, personality, and care tips.">
-    <meta name="keywords" content="cat breeds,cat breed guide,Ragdoll,British Shorthair,Persian,Siamese">
+    <title>67 Cat Breeds Guide - Complete Breed Directory | CatBreedAI</title>
+    <meta name="description" content="Explore our complete guide to 67+ cat breeds. Learn about characteristics, personality traits, care requirements, and origins of every major cat breed.">
+    <meta name="keywords" content="cat breeds directory,cat breed guide,all cat breeds,Persian cat,Siamese cat,Maine Coon">
+    <meta name="author" content="CatBreedAI">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://catbreedai.com/breeds/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://catbreedai.com/breeds/">
+    <meta property="og:title" content="67 Cat Breeds - Complete Guide with Photos & Details">
+    <meta property="og:description" content="Browse 67+ cat breeds with detailed information about personality, characteristics, and care. Find the perfect cat breed for your family.">
+    <meta property="og:image" content="https://catbreedai.com/assets/images/breeds-og-image.jpg">
+    <meta property="og:site_name" content="CatBreedAI">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://catbreedai.com/breeds/">
+    <meta name="twitter:title" content="67 Cat Breeds - Complete Directory">
+    <meta name="twitter:description" content="Explore all 67+ cat breeds with detailed information and photos. Find your perfect feline companion.">
+    <meta name="twitter:image" content="https://catbreedai.com/assets/images/breeds-og-image.jpg">
+    <meta name="twitter:site" content="@CatBreedAI">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
@@ -84,7 +103,7 @@
                         <path d="M50 62 L47 67 L53 67 Z" fill="white" opacity="0.8"/>
                     </svg>
                     <div>
-                        <h1 class="text-2xl font-bold">CatBreedAI</h1>
+                        <div class="text-2xl font-bold">CatBreedAI</div>
                         <p class="text-sm opacity-90">AI Sees Your Cat's Story</p>
                     </div>
                 </a>
@@ -113,7 +132,8 @@
                 </p>
                 
                 <!-- Search Box -->
-                <div class="max-w-2xl mx-auto">
+                <div class="max-w-2xl mx-auto mb-10">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Search Cat Breeds</h2>
                     <div class="relative">
                         <input 
                             type="text" 
@@ -128,18 +148,21 @@
                 </div>
                 
                 <!-- Quick Stats -->
-                <div class="grid grid-cols-3 gap-4 mt-10 max-w-2xl mx-auto">
-                    <div class="text-center p-4 bg-white rounded-xl shadow-md">
-                        <div class="text-3xl font-bold text-purple-600">67</div>
-                        <div class="text-sm text-gray-600">Cat Breeds</div>
-                    </div>
-                    <div class="text-center p-4 bg-white rounded-xl shadow-md">
-                        <div class="text-3xl font-bold text-purple-600">100%</div>
-                        <div class="text-sm text-gray-600">Free Info</div>
-                    </div>
-                    <div class="text-center p-4 bg-white rounded-xl shadow-md">
-                        <div class="text-3xl font-bold text-purple-600">AI</div>
-                        <div class="text-sm text-gray-600">Verified</div>
+                <div class="mt-12">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Our Cat Breed Database</h2>
+                    <div class="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
+                        <div class="text-center p-4 bg-white rounded-xl shadow-md">
+                            <div class="text-3xl font-bold text-purple-600">67</div>
+                            <div class="text-sm text-gray-600">Cat Breeds</div>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-xl shadow-md">
+                            <div class="text-3xl font-bold text-purple-600">100%</div>
+                            <div class="text-sm text-gray-600">Free Info</div>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-xl shadow-md">
+                            <div class="text-3xl font-bold text-purple-600">AI</div>
+                            <div class="text-sm text-gray-600">Verified</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -148,6 +171,10 @@
 
     <!-- Breeds Grid -->
     <section class="container mx-auto px-4 pb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8">Browse All Cat Breeds</h2>
+        <p class="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+            From popular breeds like Persian and Siamese to rare breeds, discover detailed information about each cat's unique characteristics, temperament, and care needs.
+        </p>
         <div id="breedsGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <!-- Breed cards will be generated by JavaScript -->
         </div>
@@ -242,5 +269,77 @@
     <script src="/js/notifications.js"></script>
     
     <script type="module" src="/js/breeds.js"></script>
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Complete Cat Breeds Directory - 67+ Breeds",
+        "description": "Comprehensive guide to 67+ cat breeds with detailed information about characteristics, personality, care requirements, and origins.",
+        "url": "https://catbreedai.com/breeds/",
+        "inLanguage": "en-US",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "CatBreedAI",
+            "url": "https://catbreedai.com"
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://catbreedai.com"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "All Cat Breeds",
+                    "item": "https://catbreedai.com/breeds/"
+                }
+            ]
+        },
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "Cat Breeds",
+            "description": "Directory of 67+ cat breeds",
+            "numberOfItems": 67,
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "British Shorthair",
+                    "url": "https://catbreedai.com/breeds/british-shorthair.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Maine Coon",
+                    "url": "https://catbreedai.com/breeds/maine-coon.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Persian",
+                    "url": "https://catbreedai.com/breeds/persian.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "Ragdoll",
+                    "url": "https://catbreedai.com/breeds/ragdoll.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 5,
+                    "name": "Siamese",
+                    "url": "https://catbreedai.com/breeds/siamese.html"
+                }
+            ]
+        }
+    }
+    </script>
 </body>
 </html>
